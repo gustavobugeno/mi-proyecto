@@ -1,4 +1,4 @@
-function Card({ item }) {
+function Card({ item, addFavorite }) {
   return (
     <div
       style={{
@@ -18,6 +18,10 @@ function Card({ item }) {
       <h3>{item.title}</h3>
       <p><strong>Director:</strong> {item.director}</p>
       <p><strong>Año:</strong> {item.release_date}</p>
+
+      <button onClick={() => addFavorite(item)}>
+        ⭐ Favorito
+      </button>
     </div>
   );
 }

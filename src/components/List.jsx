@@ -1,10 +1,10 @@
 import Card from "./Card";
 
-function List({ items }) {
+function List({ items, addFavorite }) {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
       {items.map((item) => (
-        <Card key={item.id} item={item} />
+        <Card key={item.id} item={item} addFavorite={addFavorite} />
       ))}
     </div>
   );
