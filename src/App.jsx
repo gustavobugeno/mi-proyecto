@@ -4,6 +4,7 @@ import List from "./components/List";
 import SearchBar from "./components/SearchBar";
 import FavoritesPanel from "./components/FavoritesPanel";
 import BlockedPanel from "./components/BlockedPanel";
+import Stats from "./components/Stats";
 
 function App() {
   const { data, loading, error } = useFetch("https://ghibliapi.vercel.app/films");
