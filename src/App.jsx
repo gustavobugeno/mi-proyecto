@@ -80,6 +80,12 @@ return (
     <div className="main-content">
       <h1>Studio Ghibli</h1>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Stats 
+        data={data} 
+        favorites={favorites} 
+        blocked={blocked} 
+      />
+
       <List items={filtered} addFavorite={addFavorite} blockItem={blockItem} />
     </div>
   </div>

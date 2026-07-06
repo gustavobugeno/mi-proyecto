@@ -1,16 +1,113 @@
-# React + Vite
+Taller React API — Proyecto Front End
+Autor: Gustavo Bugueno
+Tecnologías: React + Vite + Hooks + CSS + LocalStorage
+API utilizada: Studio Ghibli API
+Despliegue: Vercel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Descripción del proyecto
+Este proyecto corresponde al Taller React API del curso Programación Front End.
+El objetivo es desarrollar una aplicación web que permita:
 
-Currently, two official plugins are available:
+Cargar elementos desde una API pública.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Buscar elementos mediante una barra de búsqueda.
 
-## React Compiler
+Marcar elementos como favoritos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Bloquear elementos para ocultarlos del listado.
 
-## Expanding the ESLint configuration
+Mantener favoritos y bloqueados en localStorage.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Mostrar estadísticas (totales, favoritos, bloqueados).
+
+Ser completamente responsivo (móvil, tablet y escritorio).
+
+La aplicación fue desarrollada con React + Vite, utilizando componentes funcionales y hooks personalizados.
+
+🔗 API utilizada
+Se utiliza la API pública de Studio Ghibli:
+
+Código
+https://ghibliapi.vercel.app/films
+Los datos se consumen mediante un hook propio useFetch, que maneja:
+
+Estado de carga (loading)
+
+Estado de error (error)
+
+Datos (data)
+
+🧩 Funcionalidades principales
+Listado dinámico de películas con imagen y título.
+
+Barra de búsqueda con filtrado en tiempo real.
+
+Favoritos: agregar, quitar y mostrar en panel lateral.
+
+Bloqueados: ocultar elementos del listado y desbloquearlos.
+
+Persistencia en localStorage para favoritos y bloqueados.
+
+Estadísticas: totales, favoritos y bloqueados.
+
+Diseño responsivo con media queries.
+
+Despliegue en Vercel con auto‑deploy desde GitHub.
+
+🛠️ Tecnologías utilizadas
+React
+
+Vite
+
+JavaScript
+
+Hooks (useState, useEffect)
+
+Hook personalizado (useFetch)
+
+CSS responsivo
+
+LocalStorage
+
+Vercel (deploy)
+
+📦 Instalación y ejecución
+Clonar el repositorio:
+
+Código
+git clone https://github.com/tuusuario/tu-repo.git
+Instalar dependencias:
+
+Código
+npm install
+Ejecutar en modo desarrollo:
+
+Código
+npm run dev
+Construir para producción:
+
+Código
+npm run build
+🌐 Deploy
+El proyecto está desplegado en Vercel:
+
+👉 https://mi-proyecto-three-opal.vercel.app/
+
+Cada git push genera un nuevo deployment automático.
+
+👨‍💻 Autor
+Gustavo Bugueno  
+Desarrollador Front End — React + Vite
+
+📄 Notas del template original de Vite
+Este proyecto fue creado con el template oficial de React + Vite, que incluye:
+
+HMR (Hot Module Replacement)
+
+ESLint básico
+
+Plugins oficiales:
+
+@vitejs/plugin-react
+
+@vitejs/plugin-react-swc
