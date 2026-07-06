@@ -75,7 +75,7 @@ Vercel (deploy)
 Clonar el repositorio:
 
 Código
-git clone [https://github.com/tuusuario/tu-repo.git](https://github.com/gustavobugeno/mi-proyecto.git)
+git clone https://github.com/gustavobugeno/mi-proyecto.git
 Instalar dependencias:
 
 Código
