@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetch } from "./hooks/useFetch";
 import List from "./components/List";
 import SearchBar from "./components/SearchBar";
@@ -9,8 +9,26 @@ function App() {
   const { data, loading, error } = useFetch("https://ghibliapi.vercel.app/films");
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [favorites, setFavorites] = useState([]);
-  const [blocked, setBlocked] = useState([]);
+
+  // ⭐ FAVORITOS con persistencia
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  // ⭐ BLOQUEADOS con persistencia
+  const [blocked, setBlocked] = useState(() => {
+    const saved = localStorage.getItem("blocked");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("blocked", JSON.stringify(blocked));
+  }, [blocked]);
 
   if (loading) return <p>Cargando películas...</p>;
   if (error) return <p>Error al cargar API: {error}</p>;
@@ -21,7 +39,7 @@ function App() {
   );
 
   // EXCLUIR BLOQUEADOS
-  filtered = filtered.filter((item) => !blocked.includes(item.id));
+  filtered = filtered.filter((item) => !blocked.some((b) => b.id === item.id));
 
   // FAVORITOS
   const addFavorite = (item) => {
@@ -36,8 +54,8 @@ function App() {
 
   // BLOQUEADOS
   const blockItem = (item) => {
-    if (!blocked.includes(item.id)) {
-      setBlocked([...blocked, item.id]);
+    if (!blocked.some((b) => b.id === item.id)) {
+      setBlocked([...blocked, item]);
     }
 
     // Si está en favoritos → eliminarlo
@@ -45,21 +63,27 @@ function App() {
   };
 
   const unblockItem = (id) => {
-    setBlocked(blocked.filter((b) => b !== id));
+    setBlocked(blocked.filter((b) => b.id !== id));
   };
 
+  // ⭐ AJUSTE VISUAL AQUÍ
+  // Este contenedor principal define la distribución de los paneles
+  // Puedes modificar los porcentajes para ajustar el ancho de cada sección
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        gap: "20px",
+        alignItems: "flex-start",
+      }}
+    >
       <div style={{ width: "60%" }}>
         <h1>Studio Ghibli</h1>
 
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-        <List
-          items={filtered}
-          addFavorite={addFavorite}
-          blockItem={blockItem}
-        />
+        <List items={filtered} addFavorite={addFavorite} blockItem={blockItem} />
       </div>
 
       <FavoritesPanel favorites={favorites} removeFavorite={removeFavorite} />
