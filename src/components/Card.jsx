@@ -1,4 +1,4 @@
-function Card({ item, addFavorite }) {
+function Card({ item, addFavorite, blockItem }) {
   return (
     <div
       style={{
@@ -19,8 +19,15 @@ function Card({ item, addFavorite }) {
       <p><strong>Director:</strong> {item.director}</p>
       <p><strong>Año:</strong> {item.release_date}</p>
 
-      <button onClick={() => addFavorite(item)}>
+      <button onClick={() => addFavorite(item)} style={{ marginRight: "10px" }}>
         ⭐ Favorito
+      </button>
+
+      <button
+        onClick={() => blockItem(item)}
+        style={{ background: "#f55", color: "white" }}
+      >
+        🚫 Bloquear
       </button>
     </div>
   );
