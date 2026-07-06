@@ -66,31 +66,26 @@ function App() {
     setBlocked(blocked.filter((b) => b.id !== id));
   };
 
-  // ⭐ AJUSTE VISUAL AQUÍ
-  // Este contenedor principal define la distribución de los paneles
-  // Puedes modificar los porcentajes para ajustar el ancho de cada sección
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        gap: "20px",
-        alignItems: "flex-start",
-      }}
-    >
-      <div style={{ width: "60%" }}>
-        <h1>Studio Ghibli</h1>
-
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
-        <List items={filtered} addFavorite={addFavorite} blockItem={blockItem} />
+return (
+  <div className="app-container">
+    <div className="sidebar">
+      <div className="panel">
+        <FavoritesPanel favorites={favorites} removeFavorite={removeFavorite} />
       </div>
-
-      <FavoritesPanel favorites={favorites} removeFavorite={removeFavorite} />
-
-      <BlockedPanel blocked={blocked} unblockItem={unblockItem} />
+      <div className="panel">
+        <BlockedPanel blocked={blocked} unblockItem={unblockItem} />
+      </div>
     </div>
-  );
+
+    <div className="main-content">
+      <h1>Studio Ghibli</h1>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <List items={filtered} addFavorite={addFavorite} blockItem={blockItem} />
+    </div>
+  </div>
+);
+
+
 }
 
 export default App;

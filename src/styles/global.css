@@ -1,0 +1,239 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== CUERPO ======== */
+body {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+/* ======== LAYOUT PRINCIPAL ======== */
+.app-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ======== SIDEBAR ======== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 25%;
+}
+
+/* ======== PANEL ======== */
+.panel {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* ======== TITULOS ======== */
+.panel h2 {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+/* ======== TARJETAS ======== */
+.card {
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column-reverse; /* paneles arriba */
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .panel {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .panel {
+    width: 100%;
+  }
+
+  .card {
+    width: 100% !important;
+  }
+
+  body {
+    padding: 10px;
+  }
+}
+/* ======== PANEL MEJORADO ======== */
+.panel {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ======== TITULOS ======== */
+.panel h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+/* ======== LISTAS DE ELEMENTOS ======== */
+.panel-item {
+  background: #1a1a1a;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.panel-item button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.panel-item button:hover {
+  background: #666;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 600px) {
+  .panel {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .panel-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .panel-item button {
+    align-self: flex-end;
+  }
+}
+/* ======== PANEL GENERAL ======== */
+.panel {
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ======== TITULO ======== */
+.panel-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+/* ======== LISTA DE ELEMENTOS ======== */
+.panel-item {
+  background: #1a1a1a;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+/* ======== BOTÓN ======== */
+.panel-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.panel-btn:hover {
+  background: #666;
+}
+
+/* ======== TEXTO VACÍO ======== */
+.panel-empty {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 600px) {
+  .panel-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .panel-btn {
+    align-self: flex-end;
+  }
+}
