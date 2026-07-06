@@ -75,7 +75,7 @@ Vercel (deploy)
 Clonar el repositorio:
 
 Código
-git clone https://github.com/tuusuario/tu-repo.git
+git clone [https://github.com/tuusuario/tu-repo.git](https://github.com/gustavobugeno/mi-proyecto.git)
 Instalar dependencias:
 
 Código
@@ -91,7 +91,7 @@ npm run build
 🌐 Deploy
 El proyecto está desplegado en Vercel:
 
-👉 https://mi-proyecto-three-opal.vercel.app/
+👉 [https://mi-proyecto-three-opal.vercel.app/](https://mi-proyecto-three-opal.vercel.app/)
 
 Cada git push genera un nuevo deployment automático.
 
